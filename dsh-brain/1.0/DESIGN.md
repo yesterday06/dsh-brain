@@ -18,7 +18,7 @@
 
 | 能力 | 现在（sage-mem） | dsh-brain |
 |---|---|---|
-| 卡片存储 | 读 `D:\OpenAI\全局记忆` | 同一目录、同一格式，平滑接管 |
+| 卡片存储 | 读 `~/.sage-mem/memory` | 同一目录、同一格式，平滑接管 |
 | 注入 | 每轮 top-k | 基线 1 张（每会话一次）+ top-2（≤600 字符/张），命中 0 条不注入 |
 | 工具 | `search_memory` / `read_memory` | 4 个：search / read / write / digest |
 | 管理界面 | 设置页 | **左侧边栏「记忆」面板** |
@@ -27,7 +27,7 @@
 ## 二、目录（沿用，不搬家）
 
 ```
-D:\OpenAI\全局记忆\  user-画像.md（baseline）/ 索引-项目.md / 环境-机器.md
+~/.sage-mem/memory/  user-画像.md（baseline）/ 索引-项目.md / 环境-机器.md
 <工作区>\工作记忆\  项目记忆\{00-概况,01-决定,02-坑}.md
                     实时记忆\当前任务.md + 日志\*.md
 ```
@@ -113,10 +113,10 @@ D:\OpenAI\全局记忆\  user-画像.md（baseline）/ 索引-项目.md / 环境
 
 ## 十二、交付与安装
 
-- **源码位置**：`D:\OpenAI\仓库\dsh-brain\1.0\`（仓库按「项目 → 版本」组织：`仓库\dsh-brain\1.0`、`1.1`…，每个版本目录都是完整插件）。
+- **源码位置**：`<仓库>\dsh-brain\1.0\`（仓库按「项目 → 版本」组织：`仓库\dsh-brain\1.0`、`1.1`…，每个版本目录都是完整插件）。
 - **开源发布**：同一目录即发布内容，不含内部提示词；再推到 GitHub `yesterday06/dsh-brain`。
 - **包名**：`dsh-brain`；**面板名**：记忆大脑。
-- **本地安装**：在 `~/.dsh/profiles/desktop` 里 `pnpm add link:D:\OpenAI\仓库\dsh-brain\1.0`，把 `dsh-brain` 加进 `dsh.profile.bundles`，重启验证。
+- **本地安装**：在 `~/.dsh/profiles/desktop` 里 `pnpm add link:<仓库路径>\dsh-brain\1.0`，把 `dsh-brain` 加进 `dsh.profile.bundles`，重启验证。
 - **卸载**：bundles 移除 → `pnpm remove dsh-brain` → 删目录。
 - **改 profile 前**：先复制 `package.json` 备份。
 - 源码要能直接 `git init` 后提交，不依赖本机绝对路径（路径走配置，不写死）。

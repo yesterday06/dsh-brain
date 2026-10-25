@@ -153,7 +153,7 @@ node tests/seal-smoke.mjs      # 任务封存（51 项）
 
 ## 许可
 
-[MIT](dsh-brain/1.1/LICENSE)
+[MIT](LICENSE)
 
 ---
 
